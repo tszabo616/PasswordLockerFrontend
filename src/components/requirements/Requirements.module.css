@@ -1,0 +1,24 @@
+.requirements {
+    padding: 10px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.requirements h1 {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    text-align: left;
+}
+
+.requirementsList {
+    margin: 0;
+    text-align: left;
+}
+
+.requirementsList li {
+    font-size: 16px;
+    text-align: left;
+}

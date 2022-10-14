@@ -1,0 +1,35 @@
+.Login {
+    padding: 30px;
+    width: min-content;
+    margin: 0px auto;
+    color: white;
+    text-align: left;
+}
+
+.Login h1 {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 0 5px 0;
+}
+
+.Login label {
+    font-weight: 500;
+}
+
+.Login input {
+    width: 300px;
+    height: 30px;
+    font-size: 16px;
+    margin-top: 3px;
+}
+
+.Button {
+    width: 100%;
+}
+
+.control {
+    margin: 0 auto;
+    padding-bottom: 10px;
+    text-align: center;
+}

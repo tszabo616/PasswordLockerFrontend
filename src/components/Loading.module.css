@@ -1,0 +1,38 @@
+.loadingContainer {
+    margin: 0 auto;
+    padding-bottom: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-height: 60px;
+}
+
+.loading {
+    border: 12px dashed rgb(170, 41, 0);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    animation: spin 1.75s linear infinite;
+    position: absolute;
+}
+
+.loadingReverse {
+    border: 12px dashed rgb(170, 41, 0);
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    animation: spinReverse 1.75s linear infinite;
+    position: absolute;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spinReverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}

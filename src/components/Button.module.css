@@ -1,0 +1,19 @@
+.Button {
+    font: inherit;
+    border: 1px solid rgb(170, 41, 0);
+    background: rgb(170, 41, 0);
+    color: whitesmoke;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.Button:hover,
+.Button:active {
+    background: rgb(220, 53, 0);
+    border-color: rgb(220, 53, 0);
+}
+
+.Button:focus {
+    outline: none;
+}

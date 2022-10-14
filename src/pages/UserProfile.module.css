@@ -1,0 +1,102 @@
+.Welcome {
+    color: white;
+    text-align: center;
+}
+
+.Container {
+    margin: 0 auto;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.container {
+    background-color: rgb(25, 25, 25);
+    display: grid;
+    grid-template-columns: 140px 200px auto ;
+    grid-template-rows: 20px 20px 20px 20px;
+    gap: 10px 15px;
+    width: 840px;
+    height: 600px;
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 30px;
+}
+
+h3 {
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 0;
+    grid-row-end: 2;
+}
+
+.Label {
+    color: white;
+    text-align: left;
+    align-self: baseline;
+    font-weight: bold;
+    margin: 5px 0 0 10px; 
+}
+
+.UsernameLabel {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.EmailLabel {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    
+}
+
+.PhoneNumberLabel {
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.Text {
+    color: white;
+    text-align: left;
+    align-self: baseline;
+    margin: 0;
+}
+
+.UsernameText {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.EmailText {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.PhoneNumberText {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.ButtonsContainer {
+    display: flex;
+    flex-direction: column;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 6;
+    justify-self: right;
+}
+
+.Button {
+    height: 35px;
+    width: 190px;
+    margin: 0 0 10px 0;
+}

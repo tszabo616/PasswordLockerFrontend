@@ -1,0 +1,69 @@
+.Home {
+    text-align: center;
+    padding: 30px;
+    margin: 0px;
+    color: white;
+}
+
+.Home label {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.Home img {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.Home p {
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.icon {
+    scale: 5;
+    margin: 40px 40px 30px 40px;
+}
+
+.imagesContainer {
+    margin: 10px auto 0 auto;
+    padding: 0px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    width: min-content;
+    height: min-content;
+}
+
+.hiddenImage {
+    display: none;
+}
+
+.arrowContainer {
+    width: min-content;
+    height: min-content;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+}
+
+.arrowContainer:hover, .arrowContainer:hover * {
+    color: rgb(220, 53, 0);
+} 
+
+.prevArrowContainer {
+    /* left: calc(50% - 375px); */
+    left: -20px;
+}
+
+.nextArrowContainer {
+    /* left: calc(50% + 375px); */
+    right: -32px;
+}
+
+.arrow {
+    scale: 2;
+    color: white;
+    margin: 0;
+}
