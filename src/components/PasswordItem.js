@@ -133,13 +133,25 @@ export default function PasswordItem(props) {
                                     onEdit={props.onEdit}/>}
             {isConfirmModalShown && <ConfirmModal title='Delete Website / Password' onClose={handleCloseConfirmModal} 
                                 onSubmit={handleDelete} isLoading={isConfirmLoading} hasError={hasConfirmError}/> }
-            {hasError && (<ErrorLabel className={classes.errorLabel}>{'Something went wrong.\nPlease try again.'}</ErrorLabel>)}
-            <label className={classes.websiteLabel}>Website:</label>
-            <label className={classes.descriptionLabel}>Description:</label>
-            <label className={classes.passwordLabel}>{!hasError && isPasswordShown && 'Password:'}</label>
-            <p className={classes.websiteText}>{props.website}</p>
-            <p className={classes.descriptionText}>{props.description}</p>
-            <p className={classes.passwordText}>{!hasError && isPasswordShown && decryptedPassword}</p>
+            
+            <div className={classes.websiteContainer}>
+                <label className={classes.websiteLabel}>Website:</label> 
+                <br/>
+                <p className={classes.websiteText}>{props.website}</p>
+            </div>
+            <div className={classes.descriptionContainer}>
+                <label className={classes.descriptionLabel}>Description:</label>
+                <p className={classes.descriptionText}>{props.description}</p>
+            </div>
+            <div className={classes.passwordContainer}>
+                <label className={classes.passwordLabel}>{!hasError && isPasswordShown && 'Password:'}</label>
+                <p className={classes.passwordText}>{!hasError && isPasswordShown && decryptedPassword}</p>
+                {hasError && (<ErrorLabel className={classes.errorLabel}>{'Something went wrong.\nPlease try again.'}</ErrorLabel>)}
+            </div>
+            
+            
+            
+            
             
             <div className={classes.ButtonContainer}>
                 {(hasError || !isPasswordShown) && <Button onClick={handleShowPasswordModal} className={`${classes.ShowHideButton} ${classes.Button}`}><span>Show</span></Button>}

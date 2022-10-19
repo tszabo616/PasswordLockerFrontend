@@ -34,29 +34,30 @@ export default function MainNavigation() {
             <NavLink to="/" className={classes.navLink}>
                 <FontAwesomeIcon icon={faLock} />
                 PASSWORD LOCKER
-                
             </NavLink>
             
-            {!authCtx.isLoggedIn && (
-                <Button onClick={loginHandler} className={classes.navButton}>
-                    Login
-                </Button>
-            )}
-            {authCtx.isLoggedIn && (
-                <Button onClick={logoutHandler} className={classes.navButton}>
-                    Logout
-                </Button>
-            )}
-            {authCtx.isLoggedIn && (
-                <Button onClick={profileHandler} className={classes.navButton}>
-                    Profile
-                </Button>
-            )}
-            {authCtx.isLoggedIn && (
-                <Button onClick={passwordsPageHandler} className={classes.navButton}>
-                    Passwords
-                </Button>
-            )}
+            <div className={classes.buttonContainer}>
+                {!authCtx.isLoggedIn && (
+                    <Button onClick={loginHandler} className={classes.navButton}>
+                        Login
+                    </Button>
+                )}
+                {authCtx.isLoggedIn && (
+                    <Button onClick={logoutHandler} className={classes.navButton}>
+                        Logout
+                    </Button>
+                )}
+                {authCtx.isLoggedIn && (
+                    <Button onClick={profileHandler} className={classes.navButton}>
+                        Profile
+                    </Button>
+                )}
+                {authCtx.isLoggedIn && (
+                    <Button onClick={passwordsPageHandler} className={classes.navButton}>
+                        Passwords
+                    </Button>
+                )}
+            </div>
         </header>
     );
 }
