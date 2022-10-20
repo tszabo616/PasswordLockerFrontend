@@ -5,6 +5,7 @@ import Input from '../Input';
 import Button from '../Button';
 import Modal from './Modal';
 import ErrorLabel from '../ErrorLabel';
+import Loading from '../Loading';
 import AuthContext from '../../store/authContext';
 import {
     encrypt,
@@ -165,11 +166,7 @@ export default function EditPasswordObjModal(props) {
                     errorText={!isAccountPasswordConfirmed ? 'Please confirm the entered passwords match.' : 'Please enter a password.'}
                 />
                 {!isLoading && <Button type='submit'>Update</Button>}
-                {isLoading && (
-                    <div className={classes.control}>
-                        <p className={classes.loading}>Loading...</p>
-                    </div>
-                )}
+                {isLoading && <Loading />}
             </form>
         </Modal>
     );

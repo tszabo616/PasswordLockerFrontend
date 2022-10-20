@@ -5,6 +5,7 @@ import Input from '../Input';
 import Button from '../Button';
 import Modal from './Modal';
 import ErrorLabel from '../ErrorLabel';
+import Loading from '../Loading';
 import PasswordRequirements from '../requirements/PasswordRequirements';
 import { validPassword } from '../../utils/authUtil';
 import AuthContext from '../../store/authContext';
@@ -143,11 +144,7 @@ export default function UpdatePasswordModal(props) {
                     errorText={!isCurrPasswordConfirmed ? 'Please confirm the entered passwords match.' : 'Please enter a valid password.'}
                 />
                 {!isLoading && <Button type='submit'>Update</Button>}
-                {isLoading && (
-                    <div className={classes.control}>
-                        <p className={classes.loading}>Loading...</p>
-                    </div>
-                )}
+                {isLoading && <Loading />}
                 <GeneralRequirements />
                 <PasswordRequirements />
             </form>

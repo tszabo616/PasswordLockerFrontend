@@ -5,6 +5,7 @@ import Input from '../Input';
 import Button from '../Button';
 import Modal from './Modal';
 import ErrorLabel from '../ErrorLabel';
+import Loading from '../Loading';
 
 export default function EnterPasswordModal(props) {
     const [hasError, setHasError] = useState(false);
@@ -45,11 +46,7 @@ export default function EnterPasswordModal(props) {
                     errorText='Please enter password.'
                 />
                 {!isLoading && <Button type='submit'>Submit</Button>}
-                {isLoading && (
-                    <div className={classes.control}>
-                        <p className={classes.loading}>Loading...</p>
-                    </div>
-                )}
+                {isLoading && <Loading />}
              </form>
         </Modal>
     );
