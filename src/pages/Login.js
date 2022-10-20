@@ -19,7 +19,6 @@ import {
 } from '../utils/cryptoUtil';
 import Input from '../components/Input';
 import ErrorLabel from '../components/ErrorLabel';
-import {Strings} from '../Strings';
 import UsernameRequirements from '../components/requirements/UsernameRequirements';
 
 
@@ -111,8 +110,8 @@ export default function Login() {
 
         setIsLoading(true);
         let url;
-        if(isLogin) url = Strings.backendURL + 'api/v1/auth/login';
-        else url = Strings.backendURL + 'api/v1/auth/register';
+        if(isLogin) url = process.env.REACT_APP_BACKEND_URL + 'api/v1/auth/login';
+        else url = process.env.REACT_APP_BACKEND_URL + 'api/v1/auth/register';
         let bodyObj;
 
         if(isLogin) {

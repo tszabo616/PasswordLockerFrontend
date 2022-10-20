@@ -6,7 +6,6 @@ import EnterPasswordModal from './modal/EnterPasswordModal';
 import EditPasswordObjModal from './modal/EditPasswordObjModal';
 import ConfirmModal from './modal/ConfirmModal';
 import ErrorLabel from './ErrorLabel';
-import {Strings} from '../Strings';
 import {
     decrypt,
     hexToUint8Array,
@@ -92,7 +91,7 @@ export default function PasswordItem(props) {
         setHasConfirmError(false);
 
         setIsConfirmLoading(true);
-        let url = Strings.backendURL + 'api/v1/users/' + authCtx.username + '/password_object';
+        let url = process.env.REACT_APP_BACKEND_URL + 'api/v1/users/' + authCtx.username + '/password_object';
 
         let bodyObj = {
             website: props.website,

@@ -10,7 +10,6 @@ import {
     validPassword,
 } from '../../utils/authUtil';
 import AuthContext from '../../store/authContext';
-import {Strings} from '../../Strings';
 
 export default function UpdatePhoneNumberModal(props) {
     const [hasError, setHasError] = useState(false);
@@ -61,7 +60,7 @@ export default function UpdatePhoneNumberModal(props) {
         if(!isValidInput) return;
 
         setIsLoading(true);
-        let url = Strings.backendURL + 'api/v1/users/' + authCtx.username + '/phone_number';
+        let url = process.env.REACT_APP_BACKEND_URL + 'api/v1/users/' + authCtx.username + '/phone_number';
 
         let bodyObj = {
             phoneNumber: enteredPhoneNumber,

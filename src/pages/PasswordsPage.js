@@ -7,7 +7,6 @@ import Button from '../components/Button';
 import Loading from '../components/Loading';
 import ErrorLabel from '../components/ErrorLabel';
 import classes from './PasswordsPage.module.css';
-import {Strings} from '../Strings';
 
 export default function PasswordsPage() {
     const [hasError, setHasError] = useState(false);
@@ -56,7 +55,7 @@ export default function PasswordsPage() {
         })
     }
 
-    let url = Strings.backendURL + 'api/v1/users/' + authCtx.username + '/passwords_list';
+    let url = process.env.REACT_APP_BACKEND_URL + 'api/v1/users/' + authCtx.username + '/passwords_list';
 
     useEffect(() => {
         fetch(url, {

@@ -11,7 +11,6 @@ import {
     hexToUint8Array,
     uint8ArrayToHex,
 } from '../../utils/cryptoUtil';
-import {Strings} from '../../Strings';
 
 export default function AddPasswordObjModal(props) {
     const [hasError, setHasError] = useState(false);
@@ -72,7 +71,7 @@ export default function AddPasswordObjModal(props) {
             || !validConfirmAccountPassword || !confirmedAccountPassword) return;
 
         setIsLoading(true);
-        let url = Strings.backendURL + 'api/v1/users/' + authCtx.username + '/passwords_list';
+        let url = process.env.REACT_APP_BACKEND_URL + 'api/v1/users/' + authCtx.username + '/passwords_list';
         const encryptedPassword = await encrypt(enteredPassword, enteredAccountPassword, hexToUint8Array(authCtx.iv));
         let bodyObj = {
             website: enteredWebsite,

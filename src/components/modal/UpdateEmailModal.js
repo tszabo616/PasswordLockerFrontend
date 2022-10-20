@@ -10,7 +10,6 @@ import {
     validPassword,
 } from '../../utils/authUtil';
 import AuthContext from '../../store/authContext';
-import {Strings} from '../../Strings';
 
 export default function UpdateEmailModal(props) {
     const [hasError, setHasError] = useState(false);
@@ -61,7 +60,7 @@ export default function UpdateEmailModal(props) {
         if(!isValidInput) return;
 
         setIsLoading(true);
-        let url = Strings.backendURL + 'api/v1/users/' + authCtx.username + '/email';
+        let url = process.env.REACT_APP_BACKEND_URL + 'api/v1/users/' + authCtx.username + '/email';
 
         let bodyObj = {
             email: enteredEmail,

@@ -8,7 +8,6 @@ import ErrorLabel from '../components/ErrorLabel';
 import UpdateEmailModal from '../components/modal/UpdateEmailModal';
 import UpdatePhoneNumberModal from '../components/modal/UpdatePhoneNumberModal';
 import UpdatePasswordModal from '../components/modal/UpdatePasswordModal';
-import {Strings} from '../Strings';
 
 export default function UserProfile() {
     const [hasError, setHasError] = useState(false);
@@ -52,7 +51,7 @@ export default function UserProfile() {
         setPasswordModalIsShown(false);
     }
 
-    let url = Strings.backendURL + 'api/v1/users/' + authCtx.username + '/profile_info';
+    let url = process.env.REACT_APP_BACKEND_URL + 'api/v1/users/' + authCtx.username + '/profile_info';
 
     useEffect(() => {
         fetch(url, {

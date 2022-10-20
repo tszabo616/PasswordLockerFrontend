@@ -8,7 +8,6 @@ import ErrorLabel from '../ErrorLabel';
 import PasswordRequirements from '../requirements/PasswordRequirements';
 import { validPassword } from '../../utils/authUtil';
 import AuthContext from '../../store/authContext';
-import {Strings} from '../../Strings';
 import GeneralRequirements from '../requirements/GeneralRequirements';
 
 export default function UpdatePasswordModal(props) {
@@ -71,7 +70,7 @@ export default function UpdatePasswordModal(props) {
         if(!isValidInput) return;
 
         setIsLoading(true);
-        let url = Strings.backendURL + 'api/v1/users/' + authCtx.username + '/password';
+        let url = process.env.REACT_APP_BACKEND_URL + 'api/v1/users/' + authCtx.username + '/password';
 
         let bodyObj = {
             newPassword: enteredNewPassword,
