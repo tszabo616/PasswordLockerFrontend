@@ -1,63 +1,33 @@
-import { useContext } from 'react';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import classes from './MainNavigation.module.css';
-import Button from './Button';
-import AuthContext from '../store/authContext';
+import HamburgerMenu from './HamburgerMenu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLock } from '@fortawesome/free-solid-svg-icons';
+import { faLock, faBars } from '@fortawesome/free-solid-svg-icons';
 
 export default function MainNavigation() {
-    const authCtx = useContext(AuthContext);
-    const navigate = useNavigate();
+    const [menuIsShown, setMenuIsShown] = useState(false);
 
-    function loginHandler() {
-        navigate('/login');
-        navigate(0);
-    }
-
-    function logoutHandler() {
-        authCtx.logout();
-        navigate('/');
-    }
-
-    function profileHandler() {
-        navigate('/user_profile');
-    }
-
-    function passwordsPageHandler() {
-        navigate('/profile');
+    function handleMenuVisibility() {
+        if(menuIsShown) {
+            setMenuIsShown(false);
+        } else {
+            setMenuIsShown(true);
+        }
     }
 
     return (
         <header className={classes.header}>
-            <NavLink to="/" className={classes.navLink}>
+            <NavLink to="/" className={classes.navLink} title='Go to home page'>
                 <FontAwesomeIcon icon={faLock} className={classes.icon} />
                 PASSWORD LOCKER
             </NavLink>
             
-            <div className={classes.buttonContainer}>
-                {!authCtx.isLoggedIn && (
-                    <Button onClick={loginHandler} className={classes.navButton}>
-                        Login
-                    </Button>
-                )}
-                {authCtx.isLoggedIn && (
-                    <Button onClick={logoutHandler} className={classes.navButton}>
-                        Logout
-                    </Button>
-                )}
-                {authCtx.isLoggedIn && (
-                    <Button onClick={profileHandler} className={classes.navButton}>
-                        Profile
-                    </Button>
-                )}
-                {authCtx.isLoggedIn && (
-                    <Button onClick={passwordsPageHandler} className={classes.navButton}>
-                        Passwords
-                    </Button>
-                )}
+            <div className={classes.hamburgerButtonContainer} onClick={handleMenuVisibility} title='Menu'>
+                <FontAwesomeIcon icon={faBars} className={menuIsShown ? classes.hamburgerButtonRotated : classes.hamburgerButton}/>
             </div>
+            {menuIsShown && <HamburgerMenu onClick={handleMenuVisibility}/> }
         </header>
     );
 }
