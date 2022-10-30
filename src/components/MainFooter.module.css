@@ -1,8 +1,9 @@
 .footer {
-    background: rgb(50, 50, 50);
+    background: black;
     margin: 40px 0 0 0;
     padding: 20px 0;
     width: 100%;
+    border-top: 1.5px solid rgb(50, 50, 50);
 }
 
 .footer p {
@@ -10,4 +11,5 @@
     padding: 0px;
     text-align: center;
     margin: 0;
+    color: white;
 }

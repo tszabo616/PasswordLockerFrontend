@@ -1,16 +1,21 @@
 .header {
-    background: rgb(50, 50, 50);
+    background: black;
     padding: 0;
     width: 100%;
     height: 50px;
+    border-bottom: 1.5px solid rgb(50, 50, 50);
 }
 
 .navLink {
     font-weight: 800;
     font-size: 35px;
     margin: 5px 10px;
-    color: black;
+    color: white;
     text-decoration: none;
+}
+
+.icon {
+    margin: 0 5px 0 0;
 }
 
 .navButton {

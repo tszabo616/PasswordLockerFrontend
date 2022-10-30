@@ -32,7 +32,7 @@ export default function MainNavigation() {
     return (
         <header className={classes.header}>
             <NavLink to="/" className={classes.navLink}>
-                <FontAwesomeIcon icon={faLock} />
+                <FontAwesomeIcon icon={faLock} className={classes.icon} />
                 PASSWORD LOCKER
             </NavLink>
             
