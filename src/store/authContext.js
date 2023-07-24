@@ -70,6 +70,7 @@ export const AuthContextProvider = props => {
     // console.log('Logged In: ' + userIsLoggedIn); //////////////////
 
     const logoutHandler = useCallback(() => {
+        setUsername(null);
         setToken(null);
         localStorage.removeItem(LS_USERNAME);
         localStorage.removeItem(LS_TOKEN);
@@ -104,7 +105,7 @@ export const AuthContextProvider = props => {
     const contextValue = {
         username: username,
         token: token,
-        iv:  iv,
+        iv: iv,
         isLoggedIn: userIsLoggedIn,
         login: loginHandler,
         logout: logoutHandler,
