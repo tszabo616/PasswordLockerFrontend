@@ -54,7 +54,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faChevronRight} className={classes.arrow}/>
                 </div>
                 {IMAGES.map((e, i) =>
-                    <Image key={i} className={imgNum != i ? classes.hiddenImage : ''} alt='Password Locker' src={e.src} text={e.text} />
+                    <Image key={i} className={imgNum !== i ? classes.hiddenImage : ''} alt='Password Locker' src={e.src} text={e.text} />
                     )}
             </div>
         </React.Fragment>

@@ -1,14 +1,12 @@
-import React, { useContext } from 'react';
+import React from 'react';
 
 import classes from './UpdateModal.module.css';
 import Button from '../Button';
 import Modal from './Modal';
 import ErrorLabel from '../ErrorLabel';
 import Loading from '../Loading';
-import AuthContext from '../../store/authContext';
 
 export default function ConfirmModal(props) {
-    const authCtx = useContext(AuthContext);
 
     return (
         <Modal onClose={props.onClose}>

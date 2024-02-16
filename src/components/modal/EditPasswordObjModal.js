@@ -54,10 +54,10 @@ export default function EditPasswordObjModal(props) {
         let validDescription = isValidInput(enteredDescription);
         let validPassword = isValidInput(enteredPassword);
         let validConfirmPassword = isValidInput(enteredConfirmPassword);
-        let confirmedPassword = enteredPassword == enteredConfirmPassword;
+        let confirmedPassword = enteredPassword === enteredConfirmPassword;
         let validAccountPassword = isValidInput(enteredAccountPassword)
         let validConfirmAccountPassword = isValidInput(enteredConfirmAccountPassword)
-        let confirmedAccountPassword = enteredAccountPassword == enteredConfirmAccountPassword;
+        let confirmedAccountPassword = enteredAccountPassword === enteredConfirmAccountPassword;
 
         setIsValidWebsite(validWebsite);
         setIsValidDescription(validDescription);

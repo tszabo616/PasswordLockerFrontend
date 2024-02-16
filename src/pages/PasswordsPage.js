@@ -37,7 +37,7 @@ export default function PasswordsPage() {
     function handleEditPassword(currWebsite, currDescription, newWebsite, newDescription, newPassword) {
         setPasswordsList(passwordList => {
             let newList = passwordList.map(obj => {
-                    if(obj.website == currWebsite && obj.description == currDescription) {
+                    if(obj.website === currWebsite && obj.description === currDescription) {
                         obj.website = newWebsite;
                         obj.description = newDescription;
                         obj.password = newPassword;
@@ -50,7 +50,7 @@ export default function PasswordsPage() {
 
     function handleDeletePassword(website, description) {
         setPasswordsList(passwordList => {
-            let newPasswordList = passwordList.filter(obj => obj.website != website && obj.description != description);
+            let newPasswordList = passwordList.filter(obj => obj.website !== website && obj.description !== description);
             return newPasswordList;
         })
     }

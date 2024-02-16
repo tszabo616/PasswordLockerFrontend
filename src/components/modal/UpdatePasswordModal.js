@@ -32,10 +32,10 @@ export default function UpdatePasswordModal(props) {
         // Check input validity
         const isValidEnteredNewPassword = validPassword(enteredNewPassword);
         const isValidEnteredConfirmNewPassword = validPassword(enteredConfirmNewPassword);
-        const confirmedNewPassword = enteredNewPassword == enteredConfirmNewPassword;
+        const confirmedNewPassword = enteredNewPassword === enteredConfirmNewPassword;
         const isValidEnteredCurrPassword = validPassword(enteredCurrPassword);
         const isValidEnteredConfirmCurrPassword = validPassword(enteredConfirmCurrPassword);
-        const confirmedCurrPassword = enteredCurrPassword == enteredConfirmCurrPassword;
+        const confirmedCurrPassword = enteredCurrPassword === enteredConfirmCurrPassword;
 
         setIsValidNewPassword(isValidEnteredNewPassword);
         setIsValidConfirmNewPassword(isValidEnteredConfirmNewPassword);
